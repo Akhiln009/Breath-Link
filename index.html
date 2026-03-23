@@ -5,126 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Global Breath-Link Initiative</title>
 
-    <style>
-        :root{
-            --primary:#1a4a7c;
-            --secondary:#27ae60;
-            --bg:#fdfdfd;
-            --accent:#f39c12;
-            --dark:#0a0a0a;
-            --danger:#e74c3c;
-        }
-
-        body{ font-family:'Segoe UI',Tahoma,sans-serif; line-height:1.6; margin:0; background:var(--bg); color:#333; }
-        .container{ max-width:1000px; margin:auto; padding:20px; }
-        header{ background:var(--primary); color:#fff; padding:60px 20px; text-align:center; }
-        header h1{ margin:0; font-size:2.5rem; }
-        section{ padding:40px 0; border-bottom:1px solid #ddd; }
-
-        /* VIEWING AREA */
-        .grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:20px; }
-        .card{ background:#fff; padding:25px; border-radius:10px; box-shadow:0 2px 10px rgba(0,0,0,0.1); border-top:5px solid var(--secondary); }
-        .tag-cloud{ display:flex; flex-wrap:wrap; gap:8px; margin-top:10px; }
-        .tag{ background:#e8f4fd; color:#1a4a7c; padding:6px 12px; border-radius:15px; font-size:0.85rem; font-weight:bold; cursor:pointer; transition: 0.2s; }
-        .tag:hover{ background:#1a4a7c; color:white; }
-
-        /* SIMULATOR STYLES */
-        #simulator{ display:none; background:var(--dark); color:white; padding:40px 20px; text-align:center; }
-        .viewer { max-width:700px; margin:20px auto; background: #000; border-radius: 20px; position: relative; border: 1px solid #333; }
-        canvas { display: block; max-width: 100%; height: auto; }
-        
-        .healthbar{ width:280px; height:20px; background:#333; margin:20px auto; border-radius:10px; overflow:hidden; }
-        .healthfill{ height:100%; width:100%; background:#27ae60; transition: 1s; }
-
-        .controls button{ padding:10px 16px; margin:6px; border:none; border-radius:6px; background:#444; color:white; cursor:pointer; }
-        .controls button.active { background: var(--secondary); }
-
-        /* DETAILED INFO PANEL - SCROLLABLE */
-        .edu-panel {
-            max-width: 700px; margin: 20px auto; background: #1a1a1a; padding: 25px; 
-            border-radius: 12px; text-align: left; border-left: 5px solid var(--secondary);
-            max-height: 400px; overflow-y: auto;
-        }
-
-        .unlock-msg { color: var(--accent); font-weight: bold; margin: 15px 0; font-size: 0.9rem; }
-        .quizBtn{ display:none; background:var(--accent); padding:15px 30px; border:none; border-radius:8px; color:white; font-weight:bold; cursor:pointer; margin-top:20px; }
-
-        /* QUIZ MODAL - FIXED SCROLLING BODY */
-        #quizModal {
-            display:none; position:fixed; top:0; left:0; width:100%; height:100%; 
-            background:rgba(0,0,0,0.95); z-index:2000; justify-content:center; align-items:center;
-            padding: 20px;
-        }
-        .quiz-content {
-            background:#fff; padding:30px; border-radius:15px; max-width:600px; width:90%; 
-            color:#333; position: relative; display: flex; flex-direction: column; max-height: 90vh;
-        }
-        #quizHeader { color: var(--primary); margin-top: 0; padding-bottom: 10px; border-bottom: 1px solid #eee;}
-        #quizBody { overflow-y: auto; flex-grow: 1; padding-right: 15px; margin: 20px 0; }
-        .quiz-q { margin-bottom: 25px; border-bottom: 1px solid #eee; padding-bottom: 15px; }
-        
-        #quizResults { display:none; padding:15px; border-radius:8px; font-weight:bold; margin-bottom:10px; text-align:center;}
-
-        /* NAME INPUT SECTION */
-        #nameSection {
-            display: none;
-            background: #f0f8f0;
-            border: 2px solid var(--secondary);
-            border-radius: 10px;
-            padding: 20px;
-            margin: 15px 0;
-            text-align: center;
-        }
-        #nameSection h3 {
-            color: var(--primary);
-            margin: 0 0 5px 0;
-            font-size: 1.1rem;
-        }
-        #nameSection p {
-            color: #555;
-            margin: 0 0 15px 0;
-            font-size: 0.9rem;
-        }
-        .name-inputs {
-            display: flex;
-            gap: 10px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        .name-inputs input {
-            padding: 10px 14px;
-            border: 2px solid #ccc;
-            border-radius: 8px;
-            font-size: 1rem;
-            width: 160px;
-            transition: border-color 0.2s;
-            font-family: 'Segoe UI', Tahoma, sans-serif;
-        }
-        .name-inputs input:focus {
-            outline: none;
-            border-color: var(--secondary);
-        }
-        .name-inputs input.input-error {
-            border-color: var(--danger);
-            animation: shake 0.3s ease;
-        }
-        @keyframes shake {
-            0%, 100% { transform: translateX(0); }
-            25% { transform: translateX(-5px); }
-            75% { transform: translateX(5px); }
-        }
-        #nameError {
-            color: var(--danger);
-            font-size: 0.85rem;
-            margin-top: 8px;
-            display: none;
-        }
-
-        .cert-btn { display:none; background:#2c3e50; color:white; padding:12px; border:none; border-radius:5px; cursor:pointer; font-weight:bold; width:100%; margin-top:10px;}
-        .close-quiz { background:none; border:none; color:#999; cursor:pointer; text-align:center; width:100%;}
-
-        footer{ text-align:center; padding:40px; background:#222; color:#eee; }
-    </style>
+    <!-- All styles live in style.css -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -163,10 +45,11 @@
     </section>
 </div>
 
+<!-- SIMULATOR SECTION -->
 <div id="simulator">
     <button onclick="goBack()" style="background:#1a4a7c; color:white; border:none; padding:8px 15px; border-radius:5px; cursor:pointer;">⬅ Exit</button>
     <h2 id="simTitle">PATHOLOGY ANALYSIS</h2>
-    
+
     <div class="viewer">
         <canvas id="lungCanvas" width="700" height="500"></canvas>
     </div>
@@ -175,9 +58,9 @@
 
     <div class="controls">
         <button id="step-healthy" onclick="setExposure('healthy')">Healthy State</button>
-        <button id="step-low" onclick="setExposure('low')">Low Exposure</button>
-        <button id="step-medium" onclick="setExposure('medium')">Medium Exposure</button>
-        <button id="step-high" onclick="setExposure('high')">High Exposure</button>
+        <button id="step-low"     onclick="setExposure('low')">Low Exposure</button>
+        <button id="step-medium"  onclick="setExposure('medium')">Medium Exposure</button>
+        <button id="step-high"    onclick="setExposure('high')">High Exposure</button>
     </div>
 
     <div class="edu-panel">
@@ -199,491 +82,40 @@
     <button id="quizButton" class="quizBtn" onclick="startQuiz()">Take Certification Exam</button>
 </div>
 
+<!-- QUIZ MODAL -->
 <div id="quizModal">
     <div class="quiz-content">
         <h2 id="quizHeader">Certification Exam</h2>
         <div id="quizBody"></div>
         <div id="quizResults"></div>
 
-        <!-- Name input section shown after passing -->
         <div id="nameSection">
             <h3>🎓 Enter Your Name for the Certificate</h3>
             <p>Your name will appear exactly as you type it.</p>
             <div class="name-inputs">
                 <input type="text" id="firstNameInput" placeholder="First Name" maxlength="30">
-                <input type="text" id="lastNameInput" placeholder="Last Name" maxlength="30">
+                <input type="text" id="lastNameInput"  placeholder="Last Name"  maxlength="30">
             </div>
             <div id="nameError">Please enter both your first and last name.</div>
         </div>
-        
-        <button id="submitQuizBtn" onclick="submitQuiz()" style="background:var(--secondary); color:white; border:none; padding:12px; border-radius:5px; cursor:pointer; font-weight:bold; width:100%;">Submit Answers</button>
-        <button id="downloadCertBtn" class="cert-btn" onclick="generateCertificate()">⬇ Download My Certificate</button>
-        
+
+        <button id="submitQuizBtn"   onclick="submitQuiz()"          style="background:var(--secondary); color:white; border:none; padding:12px; border-radius:5px; cursor:pointer; font-weight:bold; width:100%;">Submit Answers</button>
+        <button id="downloadCertBtn" onclick="generateCertificate()" class="cert-btn">⬇ Download My Certificate</button>
         <button onclick="closeQuiz()" class="close-quiz">Close [X]</button>
     </div>
 </div>
 
+<!-- Hidden canvas for certificate generation -->
 <canvas id="certCanvas" width="900" height="650" style="display:none;"></canvas>
 
 <footer>
     <p>&copy; 2026 Global Breath-Link Initiative | Proposed by Ashrita Nagalla & Akhil Nagalla</p>
 </footer>
 
-<script>
-const canvas = document.getElementById("lungCanvas");
-const ctx = canvas.getContext("2d");
-let particles = [];
-let currentType = 'radon';
-let simState = { exposure: 0, targetExposure: 0, breathTime: 0 };
-let progress = { healthy: false, low: false, medium: false, high: false };
-
-const pathologyData = {
-    radon: { 
-        speed: 7, color: "rgba(180, 100, 255, 0.8)", stain: "#2b1042",
-        heading: "Radon: Alpha Decay Inhalation",
-        info: "Radon gas decays into heavy metallic 'radon daughters' that lodge in the bronchi. These emit high-energy, high-LET alpha particles directly into cell nuclei.",
-        mech: "Ionizing alpha particles physically strip electrons from DNA, causing complex double-strand DNA breaks in basal cells of the bronchial epithelium.",
-        prog: "Risk of Small-Cell Lung Carcinoma (SCLC), which doubles every 10 years of chronic exposure.",
-        quiz: [
-            {q: "What radioactive decay gas is color/odorless?", a: "Radon", o: ["Ozone", "Radon", "Carbon Monoxide"]},
-            {q: "Radon gas decays into what particles?", a: "Radon daughters", o: ["Oxygen", "Radon daughters", "Lead"]},
-            {q: "What kind of radiation is emitted?", a: "Alpha", o: ["Alpha", "Beta", "Gamma"]},
-            {q: "Is alpha radiation considered low or high LET?", a: "High LET", o: ["Low LET", "High LET", "Neither"]},
-            {q: "Where do decay particles lodge?", a: "Bronchi", o: ["Alveoli sacs", "Bronchi", "Trachea"]},
-            {q: "Which specific cell layer is targeted?", a: "Basal cells", o: ["Epithelial surface", "Basal cells", "Red cells"]},
-            {q: "How does the radiation impact DNA?", a: "Double-strand breaks", o: ["Single-strand only", "Double-strand breaks", "Strengthens it"]},
-            {q: "What cancer is the long-term risk?", a: "SCLC", o: ["SCLC", "Mesothelioma", "Benign polyps"]},
-            {q: "What leads to points mutations?", a: "Complex DNA breaks", o: ["Infection", "Complex DNA breaks", "Poor diet"]},
-            {q: "Does risk increase with time?", a: "Yes, it doubles", o: ["Yes, it doubles", "No change", "It decreases"]}
-        ]
-    },
-    cookfire: {
-        speed: 1.8, color: "rgba(50, 50, 50, 0.9)", stain: "#080808",
-        heading: "Biomass Smoke: PM 2.5 Particulates",
-        info: "Burning wood/waste releases microscopic soot that bypasses mucus defenses, physically clogging the alveoli and overloading immune cells.",
-        mech: "Persistent Alveolar Macrophage Overload leads to pro-inflammatory cytokine cascades and a permanent state of oxidative stress in deep lung tissue.",
-        prog: "Development of 'Grinders Disease' (Severe COPD), with parenchymal remodeling and pulmonary hypertension.",
-        quiz: [
-            {q: "What is the common term for PM 2.5?", a: "Soot", o: ["Steam", "Soot", "Fresh Air"]},
-            {q: "Which air sacs get physically clogged?", a: "Alveoli", o: ["Alveoli", "Trachea", "Bronchi"]},
-            {q: "Which immune cell is overloaded?", a: "Macrophages", o: ["T-cells", "Macrophages", "Red cells"]},
-            {q: "Cytokine cascades lead to what?", a: "Pro-inflammatory response", o: ["Antibody production", "Pro-inflammatory response", "Muscle healing"]},
-            {q: "Is soot larger or smaller than dust?", a: "Smaller (PM 2.5)", o: ["Smaller (PM 2.5)", "Larger", "Same size"]},
-            {q: "Can mucus defenses stop soot?", a: "No, soot bypasses it", o: ["Yes", "No, soot bypasses it", "Only wood smoke"]},
-            {q: "What vascular issue results from hypoxia?", a: "Pulmonary Hypertension", o: ["Low blood pressure", "Pulmonary Hypertension", "Better blood flow"]},
-            {q: "Parenchymal remodeling means what?", a: "Permanent tissue change", o: ["Temporary change", "Permanent tissue change", "Muscle growth"]},
-            {q: "What fuel source is mentioned?", a: "Biomass/Wood", o: ["Biomass/Wood", "Natural Gas", "Solar"]},
-            {q: "What is the prognosis disease nickname?", a: "Grinders Disease", o: ["Grinders Disease", "Soot Cough", "Wood Flu"]}
-        ]
-    },
-    genetics: {
-        speed: 1.2, color: "rgba(255, 150, 150, 0.5)", stain: "#5e2a2a",
-        heading: "Genetic: AAT Deficiency",
-        info: "A genetic error where the liver doesn't make Alpha-1 Antitrypsin, the body's 'stopper' for a powerful lung-cleaning enzyme.",
-        mech: "Protease-antiprotease imbalance. Inhaled Neutrophil Elastase 'digests' its own healthy structural fibers (elastin) in the lung walls.",
-        prog: "Panacinar Emphysema, usually in the lower lobes, leading to progressive dyspnea (shortness of breath).",
-        quiz: [
-            {q: "What protein is deficient?", a: "AAT", o: ["Insulin", "AAT", "Glutathione"]},
-            {q: "Where is AAT produced?", a: "Liver", o: ["Lungs", "Liver", "Heart"]},
-            {q: "AAT inhibits which enzyme?", a: "Neutrophil Elastase", o: ["Lactase", "Neutrophil Elastase", "Amylase"]},
-            {q: "What fibers are digested?", a: "Elastin", o: ["Muscle", "Elastin", "Collagin"]},
-            {q: "This creates a ________-antiprotease imbalance.", a: "Protease", o: ["Protease", "Antibiotic", "Protein"]},
-            {q: "Which part of the lung is hit first?", a: "Lower lobes", o: ["Upper lobes", "Lower lobes", "Trachea"]},
-            {q: "Emphysema is obstructive or restrictive?", a: "Obstructive", o: ["Restrictive", "Obstructive", "Both"]},
-            {q: "Smoke exposure accelerates this condition by?", a: "500%", o: ["10%", "50%", "500%"]},
-            {q: "What is 'dyspnea'?", a: "Shortness of breath", o: ["Fast heartbeat", "Shortness of breath", "Headache"]},
-            {q: "Is AAT deficiency genetic or viral?", a: "Genetic", o: ["Genetic", "Viral", "Bacterial"]}
-        ]
-    },
-    radiation: {
-        speed: 8, color: "rgba(80, 255, 80, 0.7)", stain: "#1a3d1a",
-        heading: "Ionizing Radiation: Fibrotic Trigger",
-        info: "High-energy external rays cause radiolytic decomposition of cellular water, creating a 'flood' of free radicals that scar lung tissue.",
-        mech: "Cytokine-mediated inflammatory cascade leading to fibroblast proliferation, making the lung stiff and unable to expand.",
-        prog: "Restrictive Lung Fibrosis, resulting in a permanent reduction in Total Lung Capacity (TLC).",
-        quiz: [
-            {q: "What causes radiolytic damage?", a: "High-energy rays", o: ["Chemicals", "High-energy rays", "Heat"]},
-            {q: "Cellular ______ is decomposed.", a: "Water", o: ["Water", "Salt", "Fat"]},
-            {q: "What particles cause the scarring?", a: "Free radicals", o: ["Oxygen", "Free radicals", "Bacteria"]},
-            {q: "This creates a stiff, ________ lung.", a: "Restrictive", o: ["Restrictive", "Obstructive", "Smaller"]},
-            {q: "Can restrictive damage be reversed?", a: "No", o: ["Yes", "No", "Sometimes"]},
-            {q: "What cascades make the lung stiff?", a: "Cytokine-mediated", o: ["Blood-sugar", "Cytokine-mediated", "Nerve-based"]},
-            {q: "What happens to TLC?", a: "Reduced", o: ["Increased", "Reduced", "No change"]},
-            {q: "Are the lungs able to expand well?", a: "No, they are stiff", o: ["Yes", "No, they are stiff", "Better than usual"]},
-            {q: "This triggers which specific cell type?", a: "Fibroblasts", o: ["Neurons", "Fibroblasts", "Red cells"]},
-            {q: "This is primarily an ________ damage source.", a: "External", o: ["External", "Internal", "Genetic"]}
-        ]
-    },
-    alcohol: {
-        speed: 1.1, color: "rgba(150, 180, 255, 0.5)", stain: "#4d3838",
-        heading: "Alcohol: Ciliary Dysmotility",
-        info: "Ethanol exposure paralyzes the 'brushes' of the lung (cilia), preventing the removal of environmental toxins and pathogens.",
-        mech: "Ethanol causes desensitization of dynein arms in cilia, leading to mucus stasis (stopping), and bacterial colonization.",
-        prog: "Frequent bacterial pneumonia and lung abscesses (pus pockets); weakened local immunity.",
-        quiz: [
-            {q: "What is ethanol?", a: "Alcohol", o: ["Alcohol", "Virus", "Chemical"]},
-            {q: "What brushes are paralyzed?", a: "Cilia", o: ["Hair", "Cilia", "Nails"]},
-            {q: "What does 'dysmotility' mean?", a: "Improper movement", o: ["No movement", "Improper movement", "Fast movement"]},
-            {q: "Ethanol desensitizes which arms?", a: "Dynein", o: ["Mitotic", "Dynein", "Muscle"]},
-            {q: "What does 'stasis' mean?", a: "Stopped", o: ["Fast", "Stopped", "Repairing"]},
-            {q: "Stagnant mucus causes colonization of?", a: "Bacteria", o: ["Oxygen", "Bacteria", "Fat"]},
-            {q: "Local lung _______ is weakened.", a: "Immunity", o: ["Muscle", "Immunity", "Vision"]},
-            {q: "Is pneumonia a prognosis risk?", a: "Yes", o: ["Yes", "No", "Only for kids"]},
-            {q: "What is a lung abscess?", a: "A pus pocket", o: ["A water pocket", "A pus pocket", "A clean spot"]},
-            {q: "Does alcohol clear toxins?", a: "No, it prevents clearance", o: ["Yes", "No, it prevents clearance", "Only red wine"]}
-        ]
-    },
-    air: {
-        speed: 3.8, color: "rgba(140, 130, 100, 0.8)", stain: "#2e2e1e",
-        heading: "Urban Pollution: Chemical Scald",
-        info: "Ground-level Ozone (O3) and NO2 physically 'scald' the lung epithelium, creating a chronic, chemically reactive surface.",
-        mech: "Lipid peroxidation of alveolar membranes and epithelial cell death, making the airways hyper-reactive to everything.",
-        prog: "Chronic Bronchitis and RADS (Reactive Airways Dysfunction Syndrome). Common in high-traffic areas.",
-        quiz: [
-            {q: "What does pollution do to epithelium?", a: "Chemical scald", o: ["Freezes it", "Chemical scald", "Moisturizes it"]},
-            {q: "What gas is O3?", a: "Ozone", o: ["Oxygen", "Ozone", "Nitrogen"]},
-            {q: "Where is Ozone described as 'ground-level'?", a: "Urban zones", o: ["The moon", "Urban zones", " Forests"]},
-            {q: "What is lipid peroxidation?", a: "Membrane damage", o: ["Fat growth", "Membrane damage", "Water gain"]},
-            {q: "Does this cause hyper-reactive airways?", a: "Yes", o: ["Yes", "No", "Sometimes"]},
-            {q: "What cells die widespread?", a: "Epithelial", o: ["Muscle", "Epithelial", "Blood"]},
-            {q: "Smog is described as photochemically what?", a: "Reactive", o: ["Nuclear", "Reactive", "Biological"]},
-            {q: "What is RADS?", a: "Airway Dysfunction Syndrome", o: ["Air Delivery System", "Airway Dysfunction Syndrome", "Air Danger Sign"]},
-            {q: "Chronic bronchitis is obstructive?", a: "Yes", o: ["Yes", "No", "Both"]},
-            {q: "NO2 and Ozone: are they described as good?", a: "No", o: ["Yes", "No", "Only in forests"]}
-        ]
-    },
-    diet: {
-        speed: 1.3, color: "rgba(255, 160, 0, 0.5)", stain: "#45382d",
-        heading: "Diet: Nutritional Weakness",
-        info: "Low intake of Vitamin A, C, and E leaves the vital surfactant layer (the lung's soap) without a chemical 'shield' against air toxins.",
-        mech: "Insufficient glutathione and alpha-tocopherol levels to quench inhaled oxidants, accelerating lipid peroxidation and cell aging.",
-        prog: "Accelerated lung aging and massive sensitivity to all other environmental triggers.",
-        quiz: [
-            {q: "Which vitamins make the shield?", a: "A, C, E", o: ["B, D", "A, C, E", "Calcium"]},
-            {q: "What is the primary supportive layer?", a: "Surfactant layer", o: ["Outer skin", "Surfactant layer", "Muscle layer"]},
-            {q: "Does low Vit A increase weakness?", a: "Yes", o: ["Yes", "No", "Maybe"]},
-            {q: "Surfactant acts as a chemical ________.", a: "Shield", o: ["Water", "Shield", "Toxin"]},
-            {q: "Low diet means insufficient what?", a: "Glutathione", o: ["Sugar", "Glutathione", "Fat"]},
-            {q: "Prognosis includes accelerated cell?", a: "Aging", o: ["Healing", "Aging", "Growth"]},
-            {q: "Poor diet increases massive what?", a: "Sensitivity to other triggers", o: ["Muscle strength", "Sensitivity to other triggers", "Airflow"]},
-            {q: "The body cannot quench inhaled what?", a: "Oxidants", o: ["Oxygen", "Oxidants", "Vitamins"]},
-            {q: "The surfactant layer is the lung's ________.", a: "Soap/shield", o: ["Stomach", "Soap/shield", "Filter"]},
-            {q: "Lifestyle and nutrition: supportive or primary?", a: "Supportive", o: ["Supportive", "Primary", "Irrelevant"]}
-        ]
-    },
-    carcinogens: {
-        speed: 3.2, color: "rgba(0, 0, 0, 1)", stain: "#000000",
-        heading: "Carcinogens: Chromosome Interference",
-        info: "Industrial carcinogens like Asbestos (fibers) physically pierce cells, causing point mutations and direct translocation of DNA.",
-        mech: "Physical interference with mitotic spindles during cell division leads to irreversible chromosome damage and abnormal cell growth.",
-        prog: "Malignant Mesothelioma; symptoms typically manifest 20-40 years after original exposure.",
-        quiz: [
-            {q: "Carcinogens: biological or industrial?", a: "Industrial", o: ["Industrial", "Biological", "Bacterial"]},
-            {q: "What toxin is a fiber?", a: "Asbestos", o: ["Asbestos", "Sugar", "Arsenic"]},
-            {q: "How do fibers damage cells?", a: "Physically pierce them", o: ["Freeze them", "Physically pierce them", "Dissolve them"]},
-            {q: "What does DNA translocation mean?", a: "Abnormal DNA damage", o: ["DNA repair", "Abnormal DNA damage", "DNA copier"]},
-            {q: "It interferes with what process?", a: "Cell division", o: ["Cell division", "Breathing", "Eating"]},
-            {q: "Point mutations are reversible?", a: "No", o: ["Yes", "No", "Sometimes"]},
-            {q: "Asbestos cancer: Mesothelioma?", a: "Yes", o: ["Yes", "No", "Flu"]},
-            {q: "What are mitotic spindles?", a: "Cell dividers", o: ["Lung muscles", "Cell dividers", "Nerves"]},
-            {q: "Symptom delay is how long?", a: "20-40 years", o: ["1 day", "20-40 years", "Next year"]},
-            {q: "Chronic irritation leads to normal or abnormal growth?", a: "Abnormal", o: ["Normal", "Abnormal", "Muscle"]}
-        ]
-    }
-};
-
-/** ANIMATION ENGINE **/
-class Particle {
-    constructor() { this.reset(); }
-    reset() {
-        const s = pathologyData[currentType] || pathologyData['radon'];
-        this.x = canvas.width / 2; this.y = 50;
-        this.vx = (Math.random() - 0.5) * 2;
-        this.vy = Math.random() * s.speed + 2;
-        this.reachedLungs = false;
-    }
-    update() {
-        this.x += this.vx; this.y += this.vy;
-        if (this.y > 180 && !this.reachedLungs) {
-            this.vx += (this.x < canvas.width/2 ? -1.5 : 1.5);
-            this.reachedLungs = true;
-        }
-        if (this.y > 480) this.reset();
-    }
-    draw() {
-        ctx.fillStyle = (pathologyData[currentType] || pathologyData['radon']).color;
-        ctx.beginPath(); ctx.arc(this.x, this.y, 4, 0, Math.PI * 2); ctx.fill();
-    }
-}
-
-function drawAnatomy(scale, exp) {
-    const cx = canvas.width / 2; const cy = 280;
-    const s = pathologyData[currentType] || pathologyData['radon'];
-    let r = 255 - (exp * 210); let g = 165 - (exp * 140); let b = 175 - (exp * 150);
-    const drawSide = (side) => {
-        ctx.save(); ctx.translate(cx + (side * 110), cy);
-        const lScale = scale * (1 - (exp * 0.18)); ctx.scale(lScale * side, lScale);
-        ctx.beginPath(); ctx.moveTo(0, -120); ctx.bezierCurveTo(160, -120, 195, 160, 0, 200);
-        ctx.bezierCurveTo(-70, 200, -40, -60, 0, -120);
-        ctx.fillStyle = `rgb(${r}, ${g}, ${b})`; ctx.fill();
-        if (exp > 0.05) {
-            ctx.globalAlpha = exp; ctx.fillStyle = s.stain;
-            for(let i=0; i<15; i++) {
-                ctx.beginPath(); ctx.arc(Math.sin(i*5)*60, Math.cos(i*3)*90, 5 + (exp*20), 0, Math.PI*2); ctx.fill();
-            }
-        }
-        ctx.restore();
-    };
-    drawSide(-1); drawSide(1);
-    ctx.fillStyle = "#444"; ctx.fillRect(cx - 18, 40, 36, 140);
-}
-
-function animate() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    simState.exposure += (simState.targetExposure - simState.exposure) * 0.04;
-    simState.breathTime += (0.04 - (simState.exposure * 0.025));
-    const scale = 1 + (Math.sin(simState.breathTime) * 0.03);
-    drawAnatomy(scale, simState.exposure);
-    if (simState.targetExposure > 0) {
-        if (particles.length < simState.targetExposure * 200) particles.push(new Particle());
-    } else { particles = []; }
-    particles.forEach(p => { p.update(); p.draw(); });
-    requestAnimationFrame(animate);
-}
-animate();
-
-/** UI LOGIC **/
-function openSim(type){
-    currentType = type; particles = []; progress = { healthy: false, low: false, medium: false, high: false };
-    document.getElementById("mainContent").style.display="none";
-    document.getElementById("simulator").style.display="block";
-    updateUI();
-    setExposure('healthy');
-}
-
-function updateUI() {
-    const s = pathologyData[currentType] || pathologyData['radon'];
-    document.getElementById("simTitle").innerText = currentType.toUpperCase() + " CLINICAL ANALYSIS";
-    document.getElementById("eduHeading").innerText = s.heading;
-    document.getElementById("infoText").innerText = s.info;
-    document.getElementById("specMech").innerHTML = s.mech;
-    document.getElementById("specProg").innerHTML = s.prog;
-}
-
-function setExposure(level){
-    progress[level] = true;
-    document.querySelectorAll('.controls button').forEach(b => b.classList.remove('active'));
-    document.getElementById('step-'+level).classList.add('active');
-    
-    let target, health, color;
-    if(level==="healthy") { target=0; health=100; color="#27ae60";}
-    else if(level==="low") { target=0.25; health=75; color="#f1c40f";}
-    else if(level==="medium") { target=0.55; health=45; color="#e67e22";}
-    else if(level==="high") { target=1.0; health=15; color="#e74c3c";}
-    
-    simState.targetExposure = target;
-    document.getElementById("healthFill").style.width=health+"%";
-    document.getElementById("healthFill").style.background=color;
-    checkUnlockStatus();
-}
-
-function checkUnlockStatus() {
-    if(progress.healthy && progress.low && progress.medium && progress.high) {
-        document.getElementById("lockMessage").style.display = "none";
-        document.getElementById("quizButton").style.display = "inline-block";
-    }
-}
-
-function goBack(){ document.getElementById("simulator").style.display="none"; document.getElementById("mainContent").style.display="block"; }
-
-/** QUIZ & CERTIFICATE LOGIC **/
-function startQuiz() {
-    const quiz = (pathologyData[currentType] || {quiz:[]}).quiz;
-    const body = document.getElementById("quizBody");
-    const results = document.getElementById("quizResults");
-    const header = document.getElementById("quizHeader");
-    
-    header.innerText = currentType.toUpperCase() + " CERTIFICATION EXAM";
-    results.style.display = "none";
-    document.getElementById("nameSection").style.display = "none";
-    document.getElementById("submitQuizBtn").style.display = "block";
-    document.getElementById("downloadCertBtn").style.display = "none";
-    document.getElementById("firstNameInput").value = "";
-    document.getElementById("lastNameInput").value = "";
-    document.getElementById("nameError").style.display = "none";
-    
-    let html = "";
-    quiz.forEach((q, i) => {
-        html += `<div class="quiz-q"><p><strong>${i+1}. ${q.q}</strong></p>`;
-        q.o.forEach(opt => {
-            html += `<label style="display:block;margin:4px 0;"><input type="radio" name="q${i}" value="${opt}"> ${opt}</label>`;
-        });
-        html += `</div>`;
-    });
-    body.innerHTML = html;
-    document.getElementById("quizModal").style.display = "flex";
-}
-
-function submitQuiz() {
-    const quiz = (pathologyData[currentType] || {quiz:[]}).quiz;
-    let score = 0;
-    quiz.forEach((q, i) => {
-        const selected = document.querySelector(`input[name="q${i}"]:checked`);
-        if(selected && selected.value === q.a) score++;
-    });
-
-    const results = document.getElementById("quizResults");
-    results.style.display = "block";
-
-    if(score >= 8) {
-        results.style.background = "#d4edda";
-        results.style.color = "#155724";
-        results.innerHTML = `🎓 PASSED: ${score}/10! You have demonstrated clinical mastery of ${currentType} pathology.`;
-        document.getElementById("submitQuizBtn").style.display = "none";
-        document.getElementById("nameSection").style.display = "block";
-        document.getElementById("downloadCertBtn").style.display = "block";
-    } else {
-        results.style.background = "#f8d7da";
-        results.style.color = "#721c24";
-        results.innerHTML = `❌ FAILED: ${score}/10. You need 8/10 to pass. Review the detailed sub-topics and try again!`;
-    }
-}
-
-function generateCertificate() {
-    const firstName = document.getElementById("firstNameInput").value.trim();
-    const lastName = document.getElementById("lastNameInput").value.trim();
-    const nameError = document.getElementById("nameError");
-    const firstInput = document.getElementById("firstNameInput");
-    const lastInput = document.getElementById("lastNameInput");
-
-    if (!firstName || !lastName) {
-        nameError.style.display = "block";
-        if (!firstName) firstInput.classList.add("input-error");
-        else firstInput.classList.remove("input-error");
-        if (!lastName) lastInput.classList.add("input-error");
-        else lastInput.classList.remove("input-error");
-        setTimeout(() => {
-            firstInput.classList.remove("input-error");
-            lastInput.classList.remove("input-error");
-        }, 400);
-        return;
-    }
-
-    nameError.style.display = "none";
-    const fullName = firstName + " " + lastName;
-
-    const c = document.getElementById("certCanvas");
-    const x = c.getContext("2d");
-
-    // Background
-    x.fillStyle = "#fffdf5";
-    x.fillRect(0, 0, 900, 650);
-
-    // Decorative background pattern
-    x.globalAlpha = 0.04;
-    x.fillStyle = "#1a4a7c";
-    for (let i = 0; i < 900; i += 40) {
-        for (let j = 0; j < 650; j += 40) {
-            x.beginPath(); x.arc(i, j, 15, 0, Math.PI * 2); x.fill();
-        }
-    }
-    x.globalAlpha = 1;
-
-    // Outer border
-    x.strokeStyle = "#1a4a7c"; x.lineWidth = 18; x.strokeRect(12, 12, 876, 626);
-    // Inner gold border
-    x.strokeStyle = "#c9a227"; x.lineWidth = 4; x.strokeRect(28, 28, 844, 594);
-    // Thin inner line
-    x.strokeStyle = "#1a4a7c"; x.lineWidth = 1.5; x.strokeRect(36, 36, 828, 578);
-
-    // Corner ornaments
-    const drawCorner = (cx, cy, angle) => {
-        x.save(); x.translate(cx, cy); x.rotate(angle);
-        x.strokeStyle = "#c9a227"; x.lineWidth = 2;
-        x.beginPath(); x.moveTo(0, 0); x.lineTo(30, 0); x.moveTo(0, 0); x.lineTo(0, 30); x.stroke();
-        x.restore();
-    };
-    drawCorner(36, 36, 0);
-    drawCorner(864, 36, Math.PI / 2);
-    drawCorner(864, 614, Math.PI);
-    drawCorner(36, 614, -Math.PI / 2);
-
-    // Header ribbon
-    x.fillStyle = "#1a4a7c";
-    x.fillRect(0, 55, 900, 75);
-
-    x.textAlign = "center";
-    x.fillStyle = "#ffffff";
-    x.font = "bold 28px Georgia, serif";
-    x.fillText("GLOBAL BREATH-LINK INITIATIVE", 450, 100);
-
-    // Subtitle
-    x.fillStyle = "#c9a227";
-    x.font = "italic 15px Georgia, serif";
-    x.fillText("Certificate of Clinical Competency", 450, 170);
-
-    // Decorative line under subtitle
-    x.strokeStyle = "#c9a227"; x.lineWidth = 1;
-    x.beginPath(); x.moveTo(250, 180); x.lineTo(650, 180); x.stroke();
-
-    // Body text
-    x.fillStyle = "#444";
-    x.font = "16px Georgia, serif";
-    x.fillText("This document certifies that", 450, 220);
-
-    // Recipient Name
-    x.fillStyle = "#1a4a7c";
-    x.font = "bold 48px Georgia, serif";
-    x.fillText(fullName, 450, 290);
-
-    // Underline the name
-    const nameWidth = x.measureText(fullName).width;
-    x.strokeStyle = "#c9a227"; x.lineWidth = 2;
-    x.beginPath(); x.moveTo(450 - nameWidth/2, 302); x.lineTo(450 + nameWidth/2, 302); x.stroke();
-
-    // Achievement text
-    x.fillStyle = "#444";
-    x.font = "16px Georgia, serif";
-    x.fillText("has successfully completed advanced pathological simulation", 450, 340);
-    x.fillText("and diagnostic training for:", 450, 365);
-
-    // Pathology type
-    x.fillStyle = "#27ae60";
-    x.font = "bold 36px Arial, sans-serif";
-    x.fillText(currentType.toUpperCase() + " PATHOLOGY", 450, 420);
-
-    // Divider
-    x.strokeStyle = "#ddd"; x.lineWidth = 1;
-    x.beginPath(); x.moveTo(100, 450); x.lineTo(800, 450); x.stroke();
-
-    // Footer info
-    x.fillStyle = "#666";
-    x.font = "13px Arial, sans-serif";
-    x.fillText("Issued by the Global Breath-Link Initiative", 450, 480);
-    x.fillText("Date: " + new Date().toLocaleDateString('en-US', {year:'numeric', month:'long', day:'numeric'}), 450, 502);
-
-    // Official Seal
-    const sx = 450, sy = 565;
-    x.beginPath(); x.arc(sx, sy, 48, 0, Math.PI*2);
-    x.fillStyle = "#c9a227"; x.fill();
-    x.beginPath(); x.arc(sx, sy, 40, 0, Math.PI*2);
-    x.fillStyle = "#27ae60"; x.fill();
-    x.beginPath(); x.arc(sx, sy, 34, 0, Math.PI*2);
-    x.strokeStyle = "#fff"; x.lineWidth = 2; x.stroke();
-    x.fillStyle = "#fff";
-    x.font = "bold 9px Arial, sans-serif";
-    x.fillText("GLOBAL BREATH-LINK", sx, sy - 7);
-    x.fillText("✦ OFFICIAL SEAL ✦", sx, sy + 8);
-
-    // Download
-    const link = document.createElement('a');
-    link.download = 'BreathLink_Certificate_' + currentType + '_' + firstName + '_' + lastName + '.png';
-    link.href = c.toDataURL('image/png');
-    link.click();
-}
-
-function closeQuiz() { document.getElementById("quizModal").style.display = "none"; }
-</script>
+<!-- All data lives in data.js -->
+<script src="data.js"></script>
+<!-- All logic lives in script.js -->
+<script src="script.js"></script>
 
 </body>
 </html>
